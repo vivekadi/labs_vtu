@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      RNSIT
+HostName                       localhost.localdomain
+ProcessIdentifier              6204
+ProcessCreationTime_UTC        1574413380
+ProcessCreationTime_Readable   Fri Nov 22 14:33:00 2019 IST
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/RNSIT/Desktop/exam/inv/da/schematic/sch.oa.cdslck.dirlck
+TimeEditLocked                 Fri Nov 22 15:17:45 2019 IST
