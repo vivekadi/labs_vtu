@@ -1,0 +1,16 @@
+RC<=T (R:feedback)
+T=1/500Hz=2x10^-3
+
+choose R=22k
+R1=2.2k
+
+this gives C=0.1uF
+
+
+Gain in differentiator is more , compared to the inductor 
+based on the reactance of the capacitor and its effect on the gain.
+
+In an integrator , if we replace the capacitor with the inductor(1mH)
+we get a very good pulse wave. As we decrease the inductance reactance in feedback reduces and gain drops.
+
+Having a 1H inductor we get the integrator to work as a differentiator, and similarly a differentiator as an integrator.

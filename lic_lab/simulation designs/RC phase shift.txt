@@ -1,0 +1,7 @@
+Use non inverting amplifier 
+
+R=1/(2*pi*6^1/2*C*f)
+
+R1=10R
+
+1+(Rf/R1)=Av=29
