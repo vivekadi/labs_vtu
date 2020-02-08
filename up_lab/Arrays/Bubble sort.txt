@@ -1,0 +1,21 @@
+.model small
+.stack
+.data
+.code
+        mov ax,@data
+        mov ds,ax
+        mov bx,05h
+    lp1:mov cx,bx
+        mov si,2000d
+     up:mov al,[si]
+        inc si
+        cmp al,[si]
+        jb down
+        xchg al,[si]
+        mov [si-1],al
+   down:loop up
+        dec bx
+        jnz lp1
+        mov ah,4ch
+        int 21h
+        end

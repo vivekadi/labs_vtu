@@ -1,0 +1,20 @@
+.model small
+.stack
+.data
+res dw 1000h
+.code
+mov ax,@data
+mov ds,ax
+mov cx,04h
+mov si,2000d
+mov ax,word ptr [si]
+up:inc si
+inc si
+add ax,word ptr [si]
+jnc down
+inc dx
+down:loop up
+mov res,ax
+mov ah,4ch
+int 21h
+end

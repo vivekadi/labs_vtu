@@ -1,0 +1,19 @@
+.model small
+.stack
+.data
+res db 10h
+.code
+mov ax,@data
+mov ds,ax
+mov si,2000d
+mov cx,05h
+mov al,[si]
+up:inc si
+cmp al,[si]
+jc down
+mov al,[si]
+down:loop up
+mov res,al
+mov ah,4ch
+int 21h
+end
