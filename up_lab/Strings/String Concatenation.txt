@@ -1,0 +1,55 @@
+.model small
+.stack
+.data
+s1 db 20h
+s2 db 20h
+len1 db 00h
+len2 db 00h
+res1 db 20 dup('$')
+res2 db 20 dup('$')
+m1 db 0dh,0ah,'Enter string 1$'
+m2 db 0dh,0ah,'Enter string 2$'
+m3 db 0dh,0ah,'Concatenated string is$'
+.code
+mov ax,@data
+mov ds,ax
+mov es,ax
+lea dx,m1
+call disp
+lea si,s1
+call read
+lea dx,m2
+call disp
+lea di,s2
+call read
+lea si,res1
+mov cl,len1
+xor ch,ch
+add si,cx
+lea di,res2
+mov cl,len2
+con:mov al,[di]
+mov [si],al
+inc si
+inc di
+loop con
+mov byte ptr [si],'$'
+lea dx,m3
+call disp
+lea dx,res1
+call disp
+mov ah,4ch
+int 21h
+disp proc
+mov ah,09h
+int 21h
+ret
+disp endp
+read proc
+mov ah,0Ah
+int 21h
+ret
+read endp
+end
+
+

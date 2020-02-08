@@ -1,0 +1,45 @@
+.model small
+.stack
+.data
+s1 db 'arora$'
+s2 db 6 dup('$')
+m1 db 'String is a pallindrome$'
+m2 db 'String is not a pallindrome$'
+.code
+mov ax,@data
+mov ds,ax
+mov es,ax
+mov cx,05h;   Count not including end of string
+lea si,s1
+lea di,s2
+dec cx
+add si,cx
+inc cx
+load: mov al,[si]
+mov [di],al
+inc di
+dec si
+loop load
+mov cx,05h
+lea si,s1
+lea di,s2
+cld
+repe cmpsb
+jz down
+lea dx,m2
+call disp
+jmp exit
+down: lea dx,m1
+call disp
+exit: mov ah,4ch
+int 21h
+disp proc
+mov ah,09h
+int 21h
+ret
+disp endp
+end
+
+
+
+

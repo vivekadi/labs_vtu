@@ -1,0 +1,33 @@
+.model small
+.stack
+.data
+s1 db 'adobe'
+s2 db 'd'
+m1 db 'character found$'
+m2 db 'character not found$'
+.code
+mov ax,@data
+mov ds,ax
+mov es,ax
+mov cx,05h
+lea di,s1
+mov al,s2
+cld
+repne scasb
+jz down
+lea dx,m2
+call disp
+jmp exit
+down:lea dx,m1
+call disp
+exit:mov ah,4ch
+int 21h
+disp proc
+mov ah,09h
+int 21h
+ret
+disp endp
+end
+
+
+

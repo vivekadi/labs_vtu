@@ -1,0 +1,31 @@
+.model small
+.stack
+.data
+s1 db 'AdoBe$'
+.code
+mov ax,@data
+mov ds,ax
+mov es,ax
+lea si,s1
+mov cx,06h
+back: mov al,[si]
+cmp al,'A'
+jb last
+cmp al,'Z'
+ja next
+add al,20h
+jmp last
+next: cmp al,'a'
+jb last
+cmp al,'z'
+ja last
+sub al,20h
+last: mov [si],al
+inc si
+loop back
+lea dx,s1
+mov ah,09h
+int 21h
+mov ah,4ch
+int 21h
+end
