@@ -1,0 +1,40 @@
+.model small
+.stack
+.data
+.code
+mov ax,@data
+mov ds,ax
+mov si,2000d
+mov ax,[si]
+mov bx,ax
+and ax,0F000h
+mov cl,04h
+rol al,cl
+mov cx,03E8h
+mul cx
+inc si
+inc si
+mov [si],ax
+mov ax,bx
+and ax,0F00h
+xchg ah,al
+mov cl,64h
+mul cl
+add [si],ax
+mov ax,bx
+and al,0F0h
+mov cl,04h
+shr al,cl
+mov cl,0Ah
+mul cl
+inc si
+mov [si],ax
+mov ax,bx
+and ax,0Fh
+add[si],ax
+mov ah,4ch
+int 21h
+end
+
+
+

@@ -1,0 +1,41 @@
+.model small
+.stack
+.data
+pa equ 00h
+cw equ 06h
+.code
+mov ax,@data
+mov ds,ax    
+mov dx,cw
+org 0000h
+mov al,80h
+out dx,al
+up:mov si,0
+mov di,0 
+l0: mov cx,1fffh
+l1: mov al,s1[si]
+    mov dx,pa
+    out dx,al
+    loop l1
+    inc si
+    cmp si,16
+    jl l0
+jmp up      
+org 1000h
+s1 DB 11000000B
+   DB 11111001B
+   DB 10100100B
+   DB 10110000B
+   DB 10011001B
+   DB 10010010B
+   DB 10000010B
+   DB 11011000B
+   DB 10000000B
+   DB 10010000B
+   DB 10001000B
+   DB 10000011B
+   DB 11000110B
+   DB 10100001B
+   DB 10000110B
+   DB 10001110B
+end

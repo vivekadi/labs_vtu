@@ -1,0 +1,32 @@
+.model small
+.stack
+.data
+.code
+mov ax,@data
+mov ds,ax
+mov si,2000d
+mov dx,00h
+mov ax,[si]
+mov bx,03E8h
+div bx
+mov cl,04h
+shl al,cl
+inc si
+inc si
+mov [si],al
+mov ax,dx
+mov bl,64h
+div bl
+or [si],al
+mov al,ah
+mov ah,00h
+mov bl,0Ah
+div bl
+mov cl,04h
+shl al,cl
+or al,ah
+inc si
+mov [si],al
+mov ah,4ch
+int 21h
+end
