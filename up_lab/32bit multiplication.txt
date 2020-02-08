@@ -1,0 +1,31 @@
+.model small
+.stack
+.data
+n1 dd ?
+n2 dd ?
+prod dw 4 dup(0)
+.code
+mov ax,@data
+mov ds,ax
+mov ax, word ptr n1
+mul word ptr n2
+mov prod[0],ax
+mov prod[2],dx
+mov ax,word ptr n1+2
+mul word ptr n2
+add prod[2],ax
+adc prod[4],dx
+adc prod[6],00h
+mov ax,word ptr n1
+mul word ptr n2+2
+add prod[2],ax
+adc prod[4],dx
+adc prod[6],00h
+mov ax,word ptr n1+2
+mul word ptr n2+2
+add prod[4],ax
+adc prod[6],dx
+mov ah,4ch
+int 21h
+end
+
