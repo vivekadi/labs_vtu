@@ -1,0 +1,16 @@
+.model small
+.stack
+.data
+res dw 1000h
+.code
+mov ax,@data
+mov ds,ax
+mov si,2000d
+mov al,[si]
+inc si
+mov bl,[si]
+mul bl
+mov res,ax
+mov ah,4ch
+int 21h
+end

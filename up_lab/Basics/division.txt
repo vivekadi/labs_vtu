@@ -1,0 +1,22 @@
+.model small
+.stack
+.data
+res dw 0000h
+quo db 10h
+rem db 20h
+n1 dw 2000h
+n2 db 20h
+.code
+mov ax,@data
+mov ds,ax
+mov ax,n1
+mov bl,n2
+div bx
+mov res,ax
+mov quo,al
+mov rem,ah
+mov ah,4ch
+int 21h
+end
+
+

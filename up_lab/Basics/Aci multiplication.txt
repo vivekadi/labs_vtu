@@ -1,0 +1,19 @@
+.model small
+.stack
+.data
+x db 31h
+y db 32h
+res dw 1000h
+.code
+mov ax,@data
+mov ds,ax
+mov al,x
+mov bl,y
+and al,0fh
+and bl,0fh
+mul bl
+aam
+mov res,ax
+mov ah,4ch
+int 21h
+end

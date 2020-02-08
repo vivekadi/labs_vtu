@@ -1,0 +1,18 @@
+.model small
+.stack
+.data
+.code
+mov ax,@data
+mov ds,ax
+mov si,2000d
+mov al,[si]
+sub al,[si+1]
+das
+jc down
+mov byte ptr [si+2],00h
+jmp exit
+down:mov byte ptr [si+2],0ffh
+exit: mov [si+3],al
+mov ah,4ch
+int 21h
+end
