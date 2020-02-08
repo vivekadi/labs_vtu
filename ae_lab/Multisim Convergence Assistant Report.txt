@@ -1,0 +1,67 @@
+Multisim Convergence Assistant Summary Report
+ 
+ Convergence Assistant Summary Report
+
+Outcome:
+
+	The simulation error was corrected successfully.
+
+Changes Made:
+
+	-Shunt resistance from analog nodes to ground (RSHUNT) was changed to 1000000000
+
+
+
+Multisim Convergence Assistant Log 
+ 
+Step 1: Verifying Error Scenario
+	...completed.
+
+Step 2: Setting parameter Integration Method (METHOD) to Gear 
+	Simulating...
+	  ...completed. Simulation error still occurs.
+
+Step 3: Setting parameter Initial Conditions to Set To Zero 
+	Simulating...
+	  ...completed. Simulation error still occurs.
+
+Step 4: Setting parameter Maximum Timestep (TMAX) to 1.0000e-004 
+	Simulating...
+	  ...completed. Simulation error still occurs.
+
+Step 5: Setting parameter Maximum Timestep (TMAX) to 1.0000e-003 
+	Simulating...
+	  ...completed. Simulation error still occurs.
+
+Step 6: Setting parameter Relative error tolerance (RELTOL) to 1.0000e-002 
+	Simulating...
+	  ...completed. Simulation error still occurs.
+
+Step 7: Setting parameter Shunt resistance from analog nodes to ground (RSHUNT) to 1000000000 
+	Simulating...
+	  ...completed. Simulation error fixed.
+
+Step 8: Attempting rollback of Initial Conditions to Automatically Determine 
+	Simulating...
+	...Rollback successful.
+
+Step 9: Attempting rollback of Maximum Timestep (TMAX) to 1.0000e-005 
+	Simulating...
+	...Rollback successful.
+
+Step 10: Attempting rollback of Relative error tolerance (RELTOL) to 1.0000e-003 
+	Simulating...
+	...Rollback successful.
+
+Step 11: Attempting rollback of Shunt resistance from analog nodes to ground (RSHUNT) to 1.0000e+012 
+	Simulating...
+	...Error recurred - rollback unsuccessful.
+
+Step 12: Restoring value of Shunt resistance from analog nodes to ground (RSHUNT) to 1000000000 
+
+Step 13: Attempting rollback of Integration Method (METHOD) to Trapezoidal 
+	Simulating...
+	...Rollback successful.
+
+Convergence Assistant completed successfully.
+ 
